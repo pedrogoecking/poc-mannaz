@@ -1,10 +1,4 @@
 # Databricks notebook source
-# MAGIC %pip install azure-storage-blob azure-identity
-# MAGIC %pip install pandas
-# MAGIC %pip install faker
-
-# COMMAND ----------
-
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 import pandas as pd
 import io
