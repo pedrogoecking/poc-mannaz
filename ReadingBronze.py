@@ -32,7 +32,7 @@ df = spark.read.format(file_type).option("inferSchema", "true").option("header",
 # COMMAND ----------
 
 #display do dataframe acima
-df.display()
+display(df)
 
 # COMMAND ----------
 
@@ -42,7 +42,8 @@ SELECT
   BUKRS,
   SUBSTRING(BUKRS, 2, 3) BUKRS_sub,
   LEFT (BUKRS,2) BUKRS_left,
-  RIGHT(BUKRS,2) BUKRS_right
+  RIGHT(BUKRS,2) BUKRS_right,
+  *
 FROM WC
 """)
 display (df_WC_sql)
