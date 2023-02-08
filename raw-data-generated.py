@@ -61,12 +61,13 @@ df = pd.DataFrame(
     ]
 )
 output = df.to_csv(index_label="idx", encoding = "utf-8")
+type(output)
 
-connect_str='DefaultEndpointsProtocol=https;AccountName=stgmannaz;AccountKey=biHOdhE3NSG3nCdoaijoDhBDDT4uSA0l+dNKflCAHOKy6C9WlpFaCo/uK2rRIFHM0eg1qdDBZ3PA+AStl9Canw==;EndpointSuffix=core.windows.net'
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-container_name = "poc-databricks-bronze"
-url_blob = "https://stgmannaz.blob.core.windows.net/teste-b"
+#connect_str='DefaultEndpointsProtocol=https;AccountName=stgmannaz;AccountKey=biHOdhE3NSG3nCdoaijoDhBDDT4uSA0l+dNKflCAHOKy6C9WlpFaCo/uK2rRIFHM0eg1qdDBZ3PA+AStl9Canw==;EndpointSuffix=core.windows.net'
+#blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+#container_name = "poc-databricks-bronze"
+#url_blob = "https://stgmannaz.blob.core.windows.net/teste-b"
 
-blob_client = blob_service_client.get_blob_client(container=container_name, blob="rawdata.csv")
+#blob_client = blob_service_client.get_blob_client(container=container_name, blob="rawdata.csv")
 
-blob_client.upload_blob(output, overwrite=True)
+#blob_client.upload_blob(output, overwrite=True)

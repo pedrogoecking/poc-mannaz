@@ -36,8 +36,9 @@ display(df)
 # COMMAND ----------
 
 df.write.mode("overwrite").format("delta").saveAsTable("df_wc")
+df.write.mode("overwrite").format("delta").saveAsTable("df_wc_2")
 
 
 # COMMAND ----------
 
-df.write.format("delta").mode("overwrite").option("mergeSchema","true").save("wasbs://poc-databricks-gold@stgmannaz.blob.core.windows.net/df_wc_gold.delta")
+#df.write.format("delta").mode("overwrite").option("mergeSchema","true").save("wasbs://poc-databricks-gold@stgmannaz.blob.core.windows.net/df_wc_gold.delta")
